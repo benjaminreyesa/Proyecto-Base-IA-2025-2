@@ -12,8 +12,7 @@ Cuentan con los siguientes archivos básicos:
 Un poco de vocabulario en común para entendernos entre todos :).
 
 ### 1. Canvas o lienzo
-El lienzo es una imagen RGB aplanada de tamaño  
-`width * height * 3` bytes: `[R0, G0, B0, R1, G1, B1, ...]`. Esto lo hace más eficiente para recorrer y guardar.
+El lienzo es una imagen RGB aplanada de tamaño `width * height * 3` bytes: `[R0, G0, B0, R1, G1, B1, ...]`. Esto lo hace más eficiente para recorrer y guardar.
 
 Por defecto se **inicializa** en blanco, y cuenta con los siguientes helpers:
 
