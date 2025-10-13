@@ -52,7 +52,7 @@ Cada pincelada es una estructura que contiene los siguientes atributos:
 * `x_rel`, `y_rel` ∈ [0.0,1.0]: centro del stroke en coordenadas relativas.  
 * `size_rel` ∈ [0.0,1.0]: tamaño relativo al lado menor del canvas.  
 * `rotation_deg` rotation_deg ∈ [0.0 , 360.0): ángulo de rotación en grados (antihorario).
-* `type` ∈ [0.0,3.0]: índice del brush a usar (`gBrushes[type]`).
+* `type` ∈ [0,3]: índice del brush a usar (`gBrushes[type]`).
 * `r,g,b`: color del stroke (cada componente ∈ [0,255]).  
 
 Además, cuenta con un método implementado, que pinta el stroke en el canvas:
