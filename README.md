@@ -8,8 +8,6 @@ Cuentan con los siguientes archivos básicos:
 - `stroke.cpp` — Implementación de dibujo, carga/guardado de imágenes y render (pintar). No hace falta que lo entiendas todo.
 - `testCall.cpp` — Ejemplo de uso: carga brushes, crea strokes, renderiza (pinta) y guarda un PNG. ¡Compila y ve el ejemplo!
 
----
-
 ## Conceptos básicos
 Un poco de vocabulario en común para entendernos entre todos :).
 
