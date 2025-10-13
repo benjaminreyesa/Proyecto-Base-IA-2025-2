@@ -1,4 +1,4 @@
-# Pintando con Algoritmos Evolutivos
+# Pintando con Algoritmos 
 
 ¡Hola!  Este repositorio contiene lo necesario para **pintar imágenes en un lienzo** y **convertir instancias en un lienzo**, de manera que ustedes se centren en lo importante: **mejorar las pinceladas** como tal.
 
