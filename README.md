@@ -122,7 +122,7 @@ Este código base es **tu punto de partida**: puedes modificar lo que estimes ne
   - `mondriaan.png` — *Piet Mondrian*, **Composición en rojo, azul y amarillo**. Resolución de 48x64 píxeles. 
   - `pollock.png` — *Jackson Pollock*, **Convergence**. Resolución de 64x48 píxeles. 
   - `starrynight.png` — *Vincent van Gogh*, **La noche estrellada**. Resolución de 64x48 píxeles. 
-  - `bach.png` — *Elias Gottlob Haussmannm, **Retrato de Johann Sebastian Bach**. Resolución de 48x64 píxeles. 
+  - `bach.png` — *Elias Gottlob Haussmannm*, **Retrato de Johann Sebastian Bach**. Resolución de 48x64 píxeles. 
 
 - **Librerías externas**:
   - `stb_image.h` y `stb_image_write.h` de Sean Barrett. Licencia public domain / MIT.
