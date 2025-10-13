@@ -122,8 +122,8 @@ Este código base es **tu punto de partida**: puedes modificar lo que estimes ne
   - `dali.png` — *Salvador Dalí*, **La persistencia de la memoria**. Resolución de 64x48 píxeles.   
   - `klimt.png` — *Gustav Klimt*, **El beso**. Resolución de 48x64 píxeles. 
   - `mondriaan.png` — *Piet Mondrian*, **Composición en rojo, azul y amarillo**. Resolución de 48x64 píxeles. 
-  - `pollock.png` — *Jackson Pollock*, **Convergence**.Resolución de 64x48 píxeles. 
-  - `starrynight.png` — *Vincent van Gogh*, **La noche estrellada** Resolución de 64x48 píxeles. 
+  - `pollock.png` — *Jackson Pollock*, **Convergence**. Resolución de 64x48 píxeles. 
+  - `starrynight.png` — *Vincent van Gogh*, **La noche estrellada**. Resolución de 64x48 píxeles. 
   - `bach.png` — Retrato de *Johann Sebastian Bach*. Resolución de 48x64 píxeles. 
 
 - **Librerías externas**:
