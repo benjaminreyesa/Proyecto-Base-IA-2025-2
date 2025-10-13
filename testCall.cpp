@@ -39,7 +39,7 @@ int main() {
     Stroke s3(0.20f, 0.20f, 0.5f, 90.0f, 2, randInt(0,255), randInt(0,255), randInt(0,255));
     strokes.push_back(s3);
 
-    // 4) Renderizar
+    // 4) Renderiza (pinta) el vector de strokes en el canva C
     render(strokes, C);
 
     // 5) Guardar
