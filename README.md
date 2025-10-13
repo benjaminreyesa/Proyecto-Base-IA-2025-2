@@ -62,10 +62,8 @@ Además, cuenta con un método implementado, que pinta el stroke en el canvas:
   - La **escala** al tamaño del stroke (`size_rel`).  
   - La **posiciona** en el lienzo (`x_rel`, `y_rel`).  
   - La **rota** en el lienzo según `rotation_deg`.  
-  - Por cada píxel hace un **muestreo bilineal** de la máscara para suavizar los bordes.  
-  - Finalmente, mezcla (`alpha-blend`) el color del stroke con el color del fondo, según la intensidad de la máscara.  
 
-En simples palabras: el stroke pinta el lienzo con su color, pero solo en las zonas que la máscara indica, y con la intensidad que la máscara dicta.
+Por cada píxel hace un **muestreo bilineal** de la máscara para suavizar los bordes. Finalmente, mezcla (`alpha-blend`) el color del stroke con el color del fondo, según la intensidad de la máscara. En simples palabras: el stroke pinta el lienzo con su color, pero solo en las zonas que la máscara indica, y con la intensidad que la máscara dicta.
 
 ### ¡Importante!
 **¿Por qué usar coordenadas relativas?**  Para que los strokes no dependan de un tamaño fijo; cambiar el lienzo a otra resolución mantiene el layout proporcional. _(En caso de que quieran aventurarse con lienzos más grandes)_
