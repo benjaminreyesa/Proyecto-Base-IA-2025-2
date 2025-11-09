@@ -48,10 +48,4 @@ Todos los parámetros pueden ajustarse para experimentos y análisis comparativo
 - Variar `--strokes`, `--greedy-candidates` y la semilla RNG para comparar el impacto en la calidad del MSE.
 - Registrar MSE junto con el tiempo de ejecución para cada instancia.
 
-## Próximos pasos posibles
-
-- Ajustar la generación de candidatos (por ejemplo, acotar rangos de tamaños o colores en base al target).
-- Incorporar metaheurísticas adicionales para refinar la solución a partir del resultado greedy.
-- Añadir registro a archivo (CSV/JSON) con el historial de MSE por iteración para análisis posterior.
-
 
