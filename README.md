@@ -18,11 +18,7 @@ g++ -std=c++17 -O2 app.cpp greedy_solver.cpp stroke.cpp -o painter
 ## Uso del ejecutable
 
 ```bash
-./painter --instance instancias/mona.png \
-          --strokes 300 \
-          --greedy-candidates 60 \
-          --seed 42 \
-          --output resultados/mona_300.png
+./painter --instance instancias/mona.png --strokes 300 --greedy-candidates 60 --seed 42 --output mona_300.png
 ```
 
 ### Parámetros
