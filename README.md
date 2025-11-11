@@ -9,6 +9,12 @@ El código original (`stroke.*`, `testCall.cpp`) se mantiene sin cambios y se re
 
 ## Compilación sugerida
 
+En la terminal de Ubuntu ejecutar el comando:
+```bash
+make
+```
+sino tambien se puede compilar directamente desde la terminal normal con:
+
 ```bash
 g++ -std=c++17 -O2 app.cpp greedy_solver.cpp stroke.cpp -o painter
 ```
