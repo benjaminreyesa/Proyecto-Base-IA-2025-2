@@ -1,1 +1,18 @@
+# Ejecutables
 painter.exe
+*.exe
+
+# Archivos compilados
+build/
+*.o
+*.d
+
+# Resultados de experimentos (opcional - descomentar si no quieres subir resultados)
+# resultados_tabu/
+
+# Archivos Python temporales
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python

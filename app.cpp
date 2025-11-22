@@ -1,5 +1,7 @@
 #include "greedy_solver.h"
+#include "tabu_search.h"
 
+#include <chrono>
 #include <filesystem>
 #include <iostream>
 #include <stdexcept>
@@ -12,6 +14,7 @@ struct AppConfig {
     int numStrokes = 300;
     uint64_t seed = 12345;
     GreedyConfig greedy;
+    TabuConfig tabu;
     std::string outputImage = "output.png";
 };
 
@@ -58,6 +61,14 @@ AppConfig parseArgs(int argc, char** argv) {
             config.greedy.candidatesPerStroke = std::stoi(requiresValue(arg));
         } else if (arg == "--output") {
             config.outputImage = requiresValue(arg);
+        } else if (arg == "--tabu-iters") {
+            config.tabu.maxIterations = std::stoi(requiresValue(arg));
+        } else if (arg == "--tabu-tenure") {
+            config.tabu.tabuTenure = std::stoi(requiresValue(arg));
+        } else if (arg == "--tabu-neigh") {
+            config.tabu.neighborhoodSize = std::stoi(requiresValue(arg));
+        } else if (arg == "--tabu-noimprove") {
+            config.tabu.maxNoImprove = std::stoi(requiresValue(arg));
         } else {
             throw std::runtime_error("Argumento desconocido: " + arg);
         }
@@ -85,14 +96,30 @@ int main(int argc, char** argv) {
         std::cout << "Lienzo: " << problem.width() << "x" << problem.height() << "\n";
         std::cout << "Greedy -> strokes: " << config.numStrokes
                   << ", candidatos: " << config.greedy.candidatesPerStroke << "\n";
+        std::cout << "Tabu -> iteraciones: " << config.tabu.maxIterations
+                  << ", tenure: " << config.tabu.tabuTenure
+                  << ", vecindario: " << config.tabu.neighborhoodSize << "\n";
 
         // Construir la solución greedy y reportar su MSE final.
+        auto startGreedy = std::chrono::high_resolution_clock::now();
         Solution greedySolution = buildGreedySolution(problem, evaluator, rng, config.greedy);
+        auto endGreedy = std::chrono::high_resolution_clock::now();
+        double timeGreedy = std::chrono::duration<double>(endGreedy - startGreedy).count();
         std::cout << "MSE Greedy: " << greedySolution.mse << "\n";
+        std::cout << "Tiempo Greedy (s): " << timeGreedy << "\n";
+
+        // Refinar con Tabu Search.
+        auto startTabu = std::chrono::high_resolution_clock::now();
+        Solution bestSolution = runTabuSearch(problem, evaluator, rng, greedySolution, config.tabu);
+        auto endTabu = std::chrono::high_resolution_clock::now();
+        double timeTabu = std::chrono::duration<double>(endTabu - startTabu).count();
+        std::cout << "MSE Tabu final: " << bestSolution.mse << "\n";
+        std::cout << "Tiempo Tabu (s): " << timeTabu << "\n";
+        std::cout << "Tiempo Total (s): " << (timeGreedy + timeTabu) << "\n";
 
         // Renderizar la solución elegida y guardarla a disco.
         Canvas output(problem.width(), problem.height());
-        render(greedySolution.strokes, output);
+        render(bestSolution.strokes, output);
         if (!savePNG(output, config.outputImage)) {
             throw std::runtime_error("No se pudo guardar la imagen de salida.");
         }

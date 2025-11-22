@@ -5,7 +5,7 @@
 CXX       ?= g++
 CXXFLAGS  ?= -std=c++17 -O2 -Wall -Wextra -Wpedantic -MMD -MP
 LDFLAGS   ?=
-SRC        = app.cpp greedy_solver.cpp stroke.cpp
+SRC        = app.cpp greedy_solver.cpp tabu_search.cpp stroke.cpp
 OBJ        = $(SRC:%.cpp=build/%.o)
 DEP        = $(OBJ:.o=.d)
 BIN        = painter
